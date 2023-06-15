@@ -36,7 +36,11 @@ app.get("/api/v1/linkedin", (req, res) => {
     res.status(200).json(instaSocial);
 });
 
+app.get("/api/v1/:token", (req, res) => {
+    res.status(200).json({params: req.params.token})
+})
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`app listening on port ${port}`);
 });
 

@@ -1,6 +1,6 @@
-# OneSocial - Manage all your social media platform
+# OneSocial - Manage all your social media platforms.
 
-## OneSocial let's you manage all your social media platform from one single app or website.
+## OneSocial let's you manage all your social media platforms from one single app or website.
 
 ## Features
 
