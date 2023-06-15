@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
   res.send('Hello from OneSocial!');
@@ -38,7 +38,7 @@ app.get("/api/v1/linkedin", (req, res) => {
 
 app.get("/api/v1/:token", (req, res) => {
     res.status(200).json({params: req.params.token})
-})
+});
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
