@@ -1,6 +1,17 @@
 const express = require('express')
-const app = express()
+const swaggerUi = require('swagger-ui-express');
+const fs = require("fs");
+const YAML = require("yaml");
+const file  = fs.readFileSync('./swagger.yaml', 'utf8')
+const swaggerDocument = YAML.parse(file)
+const app = express();
 const port = process.env.PORT || 5000;
+
+var options = {
+    customCss: '.swagger-ui .topbar { display: none }'
+};
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
 app.get('/', (req, res) => {
   res.send('Hello from OneSocial!');
